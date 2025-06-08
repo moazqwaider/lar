@@ -1,0 +1,50 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.divbut{
+
+   width: 400px;
+   background-color: bisque;
+   display: flex;
+   width: 600px;
+   height: 500px;
+   justify-content: center;
+   position: relative;
+   margin-top: 100px;
+  
+}
+button{
+    background-color: blue;
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    bottom: 0px;
+    color: white;
+    font-size: 20px;
+}
+
+
+ a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+.bu{
+   background-color:rgba(12, 12, 235, 0.701);
+}
+
+.divbut .bu a {
+    
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    pointer-events: none;
+}

@@ -1,0 +1,41 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+   position: relative;
+}
+.div{
+    display: flex;
+    margin: 100px ;
+
+}
+.imags{ 
+    height: 700px;
+    width: 80%;
+    background-color: blue;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+  
+  
+}
+.imags .img{
+    height: 50px;
+    width: 50px;
+
+}
+
+.cout{
+    display: grid;
+}
+.bod{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    margin-top: 100px;
+    right: 0 ;
+}
+

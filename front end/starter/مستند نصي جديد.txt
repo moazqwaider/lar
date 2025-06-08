@@ -1,0 +1,138 @@
+let but=document.querySelector('.add');
+let files = document.querySelector('.file');
+const img = document.querySelector('.img');
+let inp1=document.getElementById('input1')
+let inp2=document.getElementById('input2')
+let inp3=document.getElementById('input3')
+let inp4=document.getElementById('input4')
+let inp5=document.getElementById('input5')
+let inp6=document.getElementById('input6')
+let bode = document.querySelector('.bod');
+
+
+createNewButton
+load();
+
+function createNewButton() {
+  let newButton = document.createElement('div');
+  
+  
+  newButton.innerHTML=`  
+     <label>
+                    <input class="file" type="file"> 
+                </label>
+                <label>
+                    width:
+                    <input value="" id="input1" type="text">
+                </label>
+                <label>
+                    heigh:
+                    <input value="" id="input2" type="text">
+                </label>
+                <label>
+                    top: 
+                    
+                    <input value="" id="input3" type="text">
+                </label>
+                <label>
+                    bottom: 
+                
+                    <input value="" id="input4" type="text">
+                </label>
+                <label>
+                    left: 
+                
+                    <input value="" id="input5" type="text">
+                </label>
+                <label>
+                    right: 
+                
+                    <input value="" id="input6" type="text">
+                </label>
+
+
+  `;
+  document.body.appendChild(newButton);
+}
+
+function load(){
+    files.addEventListener('change', function() {
+             let reader = new FileReader();
+            reader.readAsDataURL(files.files[0]);
+            reader.addEventListener('load', () => {
+             img.src =reader.result;
+             img.style.width=`${inp1.value}px`;
+             img.style.height=`${inp2.value}px`;
+             img.style.paddingTop =`${inp3.value}px`;
+             img.style.paddingBottom=`${inp4.value}px`;
+             img.style.paddingRight=`${inp5.value}px`;
+             img.style.paddingLeft=`${inp6.value}px`;
+
+             });
+
+            
+   
+  });}
+  but.onclick=function () {
+    createNewButton();
+    load();
+    bode.style.backgroundColor='blue';
+    
+}
+
+************************
+حل اخر 
+
+let but=document.querySelector('.add');
+let files = document.querySelector('.file');
+let img = document.querySelector('.img');
+let inp1=document.getElementById('input1')
+let inp2=document.getElementById('input2')
+let inp3=document.getElementById('input3')
+let inp4=document.getElementById('input4')
+let inp5=document.getElementById('input5')
+let inp6=document.getElementById('input6')
+let bode = document.querySelector('.bod');
+
+let container = document.querySelector('.imags');
+
+
+load();
+
+
+
+function load(){
+    
+    files.addEventListener('change', function() {
+        let fileList = files.files;
+        
+        for (let i = 0; i < fileList.length; i++) {
+          let reader = new FileReader();
+          let img = document.createElement('img'); 
+          
+          reader.readAsDataURL(fileList[i]);
+          reader.addEventListener('load', () => {
+            img.src = reader.result;
+            img.style.width = `${inp1.value}px`;
+            img.style.height = `${inp2.value}px`;
+            img.style.top = `${inp3.value}px`;
+            img.style.bottom = `${inp4.value}px`;
+            img.style.right = `${inp5.value}px`;
+            img.style.left = `${inp6.value}px`;
+          });
+      
+          container.appendChild(img);
+          document.container.appendChild(container);
+          
+        }
+
+      });
+     
+  }
+
+  
+ 
+
+
+
+
